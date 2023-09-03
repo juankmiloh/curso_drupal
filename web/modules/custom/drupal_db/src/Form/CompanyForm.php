@@ -86,34 +86,34 @@ class CompanyForm extends FormBase {
     }
 
     public function validateForm(array &$form, FormStateInterface $form_state) {
-        // $name = $form_state->getValue(key: 'name');
-        // if (strlen($name) < 5) { // Si la longitud del campo no es de 5 caracteres
-        //     // \Drupal::messenger()->addError(message: 'The company name must be at least 5 characters long');
-        //     $form_state->setErrorByName(name: 'name', message: $this->t('The company name must be at least 5 characters long'));
-        // }
-    }
-
-    public function submitForm(array &$form, FormStateInterface $form_state) {
-        $date = $form_state->getValue(key: 'tests');
-        dpm($date);
-        $my_timestamp = strtotime($date);
-        dpm($my_timestamp);
-        $fecha = new \DateTime();
-        $fecha->setTimestamp($my_timestamp);
-        dpm($fecha->format(format: 'Y-M-D'));
+        $name = $form_state->getValue(key: 'name');
+        if (strlen($name) < 5) { // Si la longitud del campo no es de 5 caracteres
+            // \Drupal::messenger()->addError(message: 'The company name must be at least 5 characters long');
+            $form_state->setErrorByName(name: 'name', message: $this->t('The company name must be at least 5 characters long'));
+        }
     }
 
     // public function submitForm(array &$form, FormStateInterface $form_state) {
-    //     $connection = Database::getConnection();
-    //     $connection->insert(table: 'company')
-    //         ->fields([
-    //             'name' => $form_state->getValue(key: 'name'),
-    //             'address' => $form_state->getValue(key: 'address'),
-    //             'CEO' => $form_state->getValue(key: 'CEO'),
-    //         ])
-    //         ->execute();
-    //     \Drupal::messenger()->addMessage(message: 'Company saved!');
+    //     $date = $form_state->getValue(key: 'tests');
+    //     dpm($date);
+    //     $my_timestamp = strtotime($date);
+    //     dpm($my_timestamp);
+    //     $fecha = new \DateTime();
+    //     $fecha->setTimestamp($my_timestamp);
+    //     dpm($fecha->format(format: 'Y-M-D'));
     // }
+
+    public function submitForm(array &$form, FormStateInterface $form_state) {
+        $connection = Database::getConnection();
+        $connection->insert(table: 'company')
+            ->fields([
+                'name' => $form_state->getValue(key: 'name'),
+                'address' => $form_state->getValue(key: 'address'),
+                'CEO' => $form_state->getValue(key: 'CEO'),
+            ])
+            ->execute();
+        \Drupal::messenger()->addMessage(message: 'Company saved!');
+    }
 
     // public function SaveCompany(FormStateInterface $form_state) {
     //     $connection = Database::getConnection();
