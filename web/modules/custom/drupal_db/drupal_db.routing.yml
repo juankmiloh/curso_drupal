@@ -29,3 +29,11 @@ drupal.delete:
     _title: 'Delete Data'
   requirements:
     _permission: 'access content'
+
+drupal_db.company_form:
+  path: '/company/add'
+  defaults: 
+    _form: '\Drupal\drupal_db\Form\CompanyForm'
+    _title: 'Add Company'
+  requirements:
+    _permission: 'access content'
