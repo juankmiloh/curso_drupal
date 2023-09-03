@@ -1,0 +1,20 @@
+# ARCHIVO PARA CREAR TABS [PESTAÑAS] EN UNA PAGINA
+# SE CONFIGURA QUE LAS TABS SE AGRUPEN EN LA TAB1
+
+drupal_pages.tab1:
+  route_name: drupal.hello # Route machine
+  title: Saludo
+  base_route: drupal_pages.tab1
+  weight: 10
+
+drupal_pages.tab2:
+  route_name: drupal.sum
+  title: Suma
+  base_route: drupal_pages.tab1
+  weight: 20
+
+drupal_pages.tab3:
+  route_name: drupal.user
+  title: Usuario
+  base_route: drupal_pages.tab1
+  weight: 30

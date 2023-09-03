@@ -1,0 +1,8 @@
+# ARCHIVO PARA CONFIGURAR PERMISOS DE VISUALIZACION DE PAGINAS [VISTAS]
+# LOS PERMISOS SE DAN A LOS ROLES
+# ENLACE PARA MODIFICAR PERMISOS http://curso-drupal.dev.com/admin/people/permissions
+
+# PERMISO QUE PERMITE MANEJAR EL ACCESO A LA VISTA DE sum
+'access sum': # NOMBRE DE PERMISO
+  title: 'Access Sum Page'
+  description: Allow Users to access sum page

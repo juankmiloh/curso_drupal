@@ -11,6 +11,7 @@ drupal.hello:
   weight: 3
 
 # ENLACE A PAGINA DE SUMA
+# SE ENVIAN PARAMETROS POR DEFECTO
 drupal.sum:
   title: 'sum'
   description: 'Esta pagina hara una suma'
@@ -22,9 +23,10 @@ drupal.sum:
   weight: 4
 
 # MENU EN BARRA DE TAREAS DE DRUPAL - APUNTANDO A LA PAGINA SALUDO
+# EN LA CONFIGURACION PARENT PUEDE IR EL ENLACE A CUALQUIER MENU REVISAR ARCHIVO web/core/modules/system/system.links.menu.yml
 my_pages.admin_drupal_pages:
   title: 'Saludo'
   description: 'Esta pagina es de Hola'
   route_name: drupal.hello
-  parent: system.admin
+  parent: system.admin # system.admin hace referencia al menu principal
   weight: -1
