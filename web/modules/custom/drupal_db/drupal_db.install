@@ -1,0 +1,45 @@
+<?php
+
+/**
+ * Implements hook_schema()
+ * EN EL SCHEMA VAMOS A CREAR LAS TABLAS DE LA BD
+ */
+
+function drupal_db_schema() {
+    $schema['company'] = [
+        'description' => 'Companies',
+        'fields' => [
+            'id' => [
+                'description' => 'Company id',
+                'type' => 'serial',
+                'size' => 'big',
+                'not null' => TRUE
+            ],
+            'name' => [
+                'description' => 'Company Name',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => ''
+            ],
+            'address' => [
+                'description' => 'Company address',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => ''
+            ],
+            'CEO' => [
+                'description' => 'Company CEO',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => ''
+            ],
+        ],
+        'primary key' => ['id']
+    ];
+
+    #$schema['company'] = [];
+    return $schema;
+}
