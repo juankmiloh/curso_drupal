@@ -1,0 +1,30 @@
+# -----------------------------
+# ARCHIVO PARA CREAR MENUS
+# -----------------------------
+
+# ENLACE A PAGINA DE SALUDO
+drupal.hello:
+  title: 'Saludo'
+  description: 'Esta pagina te dira Hola'
+  route_name: drupal.hello # Machine name
+  menu_name: main
+  weight: 3
+
+# ENLACE A PAGINA DE SUMA
+drupal.sum:
+  title: 'sum'
+  description: 'Esta pagina hara una suma'
+  route_name: drupal.sum
+  route_parameters:
+    number_one: 50
+    number_two: 25
+  menu_name: main
+  weight: 4
+
+# MENU EN BARRA DE TAREAS DE DRUPAL - APUNTANDO A LA PAGINA SALUDO
+my_pages.admin_drupal_pages:
+  title: 'Saludo'
+  description: 'Esta pagina es de Hola'
+  route_name: drupal.hello
+  parent: system.admin
+  weight: -1

@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * ARCHIVO PARA UTILIZAR FUNCIONALIDADES [HOOKS]
+ * ESTOS HOOK SE ACTIVAN CUANDO SE ABRE LA VISTA
+ */
+
+use \Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * @param $route_name
+ * @param RouteMatchInterface $route_match
+ * @return string
+ * Implements hook_help
+ * recordar - cambiar del nombre 'hook' de 'hook_help' por el nombre del modulo
+ * drupal_hello_help
+ */
+function drupal_hello_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+
+    // Main module help for the block module.
+    case 'drupal.hello':
+      $output = '';
+      $output .= "<p>" . t(string: 'This hooks works!') . "</p>";
+      return $output;
+  }
+}

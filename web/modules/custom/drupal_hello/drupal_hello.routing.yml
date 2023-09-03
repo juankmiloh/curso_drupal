@@ -1,0 +1,37 @@
+# ARCHIVO PARA DEFINIR RUTAS
+
+# SE CREA EL ENLACE A LA PAGINA hello
+# URL PARA ACCEDER AL ENLACE CREADO http://curso-drupal.dev.com/hello
+drupal.hello:
+  path: '/hello' # RUTA
+  defaults:
+    _controller: '\Drupal\drupal_hello\Controller\DrupalHelloController::hello' # SE DEFINE LA FUNCION QUE SE EJECUTA CUANDO SE ACCEDDA A LA RUTA
+    _title: 'Hello page' # TITULO QUE APARECERA EN LA PAGINA CREADA
+  requirements:
+    _permission: 'access content'
+
+# SE CREA EL ENLACE A LA PAGINA sum
+# ESTA RUTA SE DEFINE PARA PERMITIR EL PASO DE PARAMETROS
+# PARAMETROS ENVIADOS number_one - number_two
+# URL PARA ACCEDER AL ENLACE CREADO http://curso-drupal.dev.com/sum
+# URL PARA ACCEDER AL ENLACE CREADO ENVIANDO PARAMETROS http://curso-drupal.dev.com/sum/20/50
+# SINO SE PASAN PARAMETROS TOMA LOS QUE SE DEFINEN POR DEFECTO EN 'defaults'
+drupal.sum:
+  path: '/sum/{number_one}/{number_two}'
+  defaults:
+    _controller: '\Drupal\drupal_hello\Controller\DrupalHelloController::sum'
+    _title: 'Sum'
+    number_one: 15 # PARAMETRO POR DEFECTO (SE ENVIA PARA QUE NO ARROJE UN NOT FOUND CUANDO SE ACCEDA A LA PAGINA)
+    number_two: 5 # PARAMETRO POR DEFECTO (NO ES NECESARIO ENVIARLOS)
+  requirements:
+    _permission: 'access content'
+
+# SE CREA EL ENLACE A LA PAGINA /get/user/{parametro}
+# {parametro} ES EL IDENTIFICADOR [ID] DEL USUARIO
+drupal.user:
+  path: '/get/user/{user}'
+  defaults:
+    _controller: '\Drupal\drupal_hello\Controller\DrupalHelloController::get_user'
+    _title: 'Usuario logueado'
+  requirements:
+    _permission: 'access content'

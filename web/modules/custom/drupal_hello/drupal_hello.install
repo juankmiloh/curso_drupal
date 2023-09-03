@@ -1,0 +1,12 @@
+<?php
+/**
+ * ARCHIVO PARA DEFINIR FUNCIONALIDADES [HOOKS]
+ * QUE QUEREMOS QUE SE ACTIVEN CUANDO SE INSTALE EL MODULO
+ */
+
+/**
+ * Implements Hook_install
+ */
+function drupal_hello_install() {
+    
+}
