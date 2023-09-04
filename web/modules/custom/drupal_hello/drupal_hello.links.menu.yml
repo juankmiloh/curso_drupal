@@ -8,12 +8,12 @@ drupal.hello:
   description: 'Esta pagina te dira Hola'
   route_name: drupal.hello # Machine name
   menu_name: main
-  weight: 3
+  weight: 0
 
 # ENLACE A PAGINA DE SUMA
 # SE ENVIAN PARAMETROS POR DEFECTO
 drupal.sum:
-  title: 'sum'
+  title: 'Suma'
   description: 'Esta pagina hara una suma'
   route_name: drupal.sum
   route_parameters:

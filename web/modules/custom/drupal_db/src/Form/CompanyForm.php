@@ -5,10 +5,6 @@ namespace Drupal\drupal_db\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Database\Database;
-use Drupal\Core\Ajax\Alert;
-use Drupal\Core\Ajax\AjaxResponse;
-use Drupal\Core\Ajax\HtmlCommand;
-
 
 class CompanyForm extends FormBase {
     public function getFormId() {

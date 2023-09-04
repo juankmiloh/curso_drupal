@@ -27,7 +27,7 @@ class DrupalHelloController extends ControllerBase {
    * RECIBE PARAMETROS
    */
   public function sum($number_one, $number_two) {
-    dpm($number_one);
+    // dpm($number_one);
     return array('#markup' => $number_one . "+" . $number_two . "=" . $number_one + $number_two);
   }
 
@@ -37,7 +37,7 @@ class DrupalHelloController extends ControllerBase {
    */
   public function get_user(UserInterface $user) {
     $currentUser = $user->toArray();
-    dpm($user->toArray());
+    // dpm($user->toArray());
     #return array('#markup' => "The current user is: " . $currentUser['name'][0]['value']);
     return array('#markup' => "The current user is: " . $user->getAccountName());
   }

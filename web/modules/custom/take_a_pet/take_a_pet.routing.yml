@@ -1,0 +1,18 @@
+# ARCHIVO PARA DEFINIR RUTAS
+
+# SE CREA EL ENLACE A LA PAGINA hello
+# URL PARA ACCEDER AL ENLACE CREADO http://curso-drupal.dev.com/hello
+take_a_pet.adopt_form: # NOMBRE DE LA MACHINE ROUTE
+  path: '/take_a_pet/form' # RUTA
+  defaults:
+    _form: '\Drupal\take_a_pet\Form\AdoptForm' # SE DEFINE LA FUNCION QUE SE EJECUTA CUANDO SE ACCEDDA A LA RUTA
+    _title: 'Adopt Form' # TITULO QUE APARECERA EN LA PAGINA CREADA
+  requirements:
+    _access: 'TRUE' # access content se refiere a que cualquier usuario puede ver la vista
+
+take_a_pet.change_photo:
+  path: '/take_a_pet/change_photo'
+  defaults:
+    _controller: '\Drupal\take_a_pet\Controller\TakeBreakController::change_photo'
+  requirements:
+    _permission: 'access content'

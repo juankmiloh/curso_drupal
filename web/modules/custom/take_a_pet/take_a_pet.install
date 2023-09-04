@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * implements hook_schema
+ */
+
+function take_a_pet_schema() {
+    $schema['take_a_pet_adoption'] = [
+        'description' => 'Make an adoption',
+        'fields' => [
+            'id' => [
+                'description' => 'Adoption Id',
+                'type' => 'serial',
+                'size' => 'big',
+                'not null' => TRUE,
+            ],
+            'adopter_name' => [
+                'description' => 'Adopter name',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+            ],
+            'phone' => [
+                'description' => 'Adopter phone Number',
+                'type' => 'int',
+                'size' => 'big',
+                'not null' => TRUE,
+                'default' => 0
+            ],
+            'adoption_date' => [
+                'description' => 'Adoption Date',
+                'type' => 'varchar',
+                'mysql_type' => 'datetime',
+                'not null' => TRUE,
+            ],
+            'adopted_pet' => [
+                'description' => 'Adopted Pet',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => ''
+            ],
+        ],
+        'primary key' => ['id']
+    ];
+    return $schema;
+}

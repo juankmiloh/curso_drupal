@@ -1,0 +1,11 @@
+# -----------------------------
+# ARCHIVO PARA CREAR MENUS
+# -----------------------------
+
+# ENLACE A PAGINA DE SALUDO
+take_a_pet.adopt_form:
+  title: 'Adopta'
+  description: 'Aqui podras adoptar un pet'
+  route_name: take_a_pet.adopt_form # Machine name
+  menu_name: main
+  weight: 5
