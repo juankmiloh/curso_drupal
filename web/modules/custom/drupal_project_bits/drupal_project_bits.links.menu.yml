@@ -1,0 +1,11 @@
+# -----------------------------
+# ARCHIVO PARA CREAR MENUS
+# -----------------------------
+
+# ENLACE A PAGINA DE SALUDO
+drupal_project_bits.list_form:
+  title: 'Listado BITS'
+  description: 'Listado de registro de personas'
+  route_name: drupal_project_bits.list_form # Machine name
+  menu_name: main
+  weight: 6
