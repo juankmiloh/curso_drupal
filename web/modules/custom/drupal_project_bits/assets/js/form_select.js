@@ -6,6 +6,7 @@
         // Seleccionar el elemento #edit-departamentodentro del contexto actual.
         var $selectDepartamento = $('#edit-departamento', context);
         var $selectCiudad = $('#edit-ciudad', context);
+        var citySelect = document.getElementById('edit-ciudad');
   
         // Verificar si el elemento existe.
         if ($selectDepartamento.length) {
@@ -21,15 +22,21 @@
                 data: ({dpto_id:dpto_id}),
                 dataType: 'JSON',
                 success: function (data) {
-                    console.log(data);
+                    console.log('data :>> ', data);
                     $selectCiudad.empty(); // Elimina las opciones anteriores
-
-                    $.each(data, function (key, obj) {
-                        console.log(obj);
-                        $selectCiudad.append($('<option>', {
-                            value: obj.value,
-                            text: obj.text
-                        }));
+                    // $.each(data, function (key, obj) {
+                    //     console.log(obj);
+                    //     $selectCiudad.append($('<option>', {
+                    //         value: obj.value,
+                    //         text: obj.text
+                    //     }));
+                    // });
+                    data.forEach(function(city) {
+                        console.log('city :>> ', city);
+                        var option = document.createElement('option');
+                        option.value = city.value;
+                        option.text = city.text;
+                        citySelect.appendChild(option);
                     });
                 }
               });
@@ -42,4 +49,3 @@
       }
     };
 })(jQuery, Drupal);
-  

@@ -9,7 +9,7 @@ use Drupal\Core\Database\Database;
 class RegisterForm extends FormBase {
     public function getFormId() {
         return 'register_form';
-    }
+    }   
 
     public function buildForm(array $form, FormStateInterface $form_state) {
         $departments = \Drupal::entityTypeManager()->getStorage(entity_type_id: 'node')->loadByProperties(['type' => 'departamento']);
@@ -87,7 +87,8 @@ class RegisterForm extends FormBase {
         $form['first_form']['ciudad'] = [
             '#type' => 'select',
             '#title' => $this->t(string: 'Ciudad'),
-            '#options' => [],
+            '#options' => $cities_array,
+            // '#options' => [],
             '#empty_option' => 'Seleccione una ciudad',
             '#description' => $this->t(string: ''),
             '#required' => TRUE,

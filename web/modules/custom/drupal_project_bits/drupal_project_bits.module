@@ -15,17 +15,17 @@ function drupal_project_bits_form_alter(&$form, &$form_Alter, $form_id) {
 
 function drupal_project_bits_submit_handler(array &$form, FormStateInterface $form_state) {
     $connection = Database::getConnection();
-        $connection->insert(table: 'drupal_project_bits_register')
-          ->fields([
-            'nombre' => $form_state->getValue(key: 'nombre'),
-            'edad' => $form_state->getValue(key: 'edad'),
-            'genero' => $form_state->getValue(key: 'genero'),
-            'departamento' => $form_state->getValue(key: 'departamento'),
-            'ciudad' => $form_state->getValue(key: 'ciudad'),
-            'empresa' => $form_state->getValue(key: 'empresa'),
-            'tiempo_laborado' => 10,
-            'salario' => $form_state->getValue(key: 'salario'),
-          ])
-          ->execute();
-        \Drupal::messenger()->addMessage(message: 'Registro realizado desde el hook con éxito!');
+    $connection->insert(table: 'drupal_project_bits_register')
+      ->fields([
+        'nombre' => $form_state->getValue(key: 'nombre'),
+        'edad' => $form_state->getValue(key: 'edad'),
+        'genero' => $form_state->getValue(key: 'genero'),
+        'departamento' => $form_state->getValue(key: 'departamento'),
+        'ciudad' => $form_state->getValue(key: 'ciudad'),
+        'empresa' => $form_state->getValue(key: 'empresa'),
+        'tiempo_laborado' => 10,
+        'salario' => $form_state->getValue(key: 'salario'),
+      ])
+      ->execute();
+    \Drupal::messenger()->addMessage(message: 'Registro realizado desde el hook con éxito!');
 }
