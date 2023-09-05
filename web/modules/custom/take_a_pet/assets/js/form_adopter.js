@@ -21,6 +21,11 @@
                 dataType: 'JSON',
                 success: function (data) {
                     console.log(data);
+                    $('#pet_image').attr('src', data['path']);
+                    $('#pet_name').text(data['pet_name']);
+                    $('#pet_age').text(data['pet_age']);
+                    $('#foundation_name').text(data['foundation_name']);
+                    $('#foundation_email').text(data['foundation_email']);
                 }
               });
   

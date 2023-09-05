@@ -1,0 +1,77 @@
+<?php
+
+/**
+ * implements hook_schema
+ */
+
+function drupal_project_bits_schema() {
+    $schema['drupal_project_bits_register'] = [
+        'description' => 'Register a person',
+        'fields' => [
+            'id' => [
+                'description' => 'Adoption Id',
+                'type' => 'serial',
+                'size' => 'big',
+                'not null' => TRUE,
+            ],
+            'nombre' => [
+                'description' => 'Person name',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+            ],
+            'edad' => [
+                'description' => 'Person age',
+                'type' => 'int',
+                'size' => 'big',
+                'not null' => TRUE,
+                'default' => 0
+            ],
+            'genero' => [
+                'description' => 'Person gender',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+            ],
+            'departamento' => [
+                'description' => 'Person department',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => ''
+            ],
+            'ciudad' => [
+                'description' => 'Person city',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => ''
+            ],
+            'empresa' => [
+                'description' => 'Person company',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => ''
+            ],
+            'tiempo_laborado' => [
+                'description' => 'Person time worked',
+                'type' => 'int',
+                'size' => 'big',
+                'not null' => TRUE,
+                'default' => 0
+            ],
+            'salario' => [
+                'description' => 'Person salary',
+                'type' => 'int',
+                'size' => 'big',
+                'not null' => TRUE,
+                'default' => 0
+            ],
+        ],
+        'primary key' => ['id']
+    ];
+    return $schema;
+}

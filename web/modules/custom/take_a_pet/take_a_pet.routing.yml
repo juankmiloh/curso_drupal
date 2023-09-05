@@ -16,3 +16,11 @@ take_a_pet.change_photo:
     _controller: '\Drupal\take_a_pet\Controller\TakeBreakController::change_photo'
   requirements:
     _permission: 'access content'
+
+take_a_pet.autocomplete_adopter:
+  path: '/autocomplete/adopter'
+  defaults:
+    _controller: '\Drupal\take_a_pet\Controller\TakeBreakController::autocomplete_adopter'
+    _format: json
+  requirements:
+    _permission: 'access content'

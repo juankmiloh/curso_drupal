@@ -34,6 +34,7 @@ class AdoptForm extends FormBase {
 
         $form['form_adopter']['adopter_name'] = [
             '#type' => 'textfield',
+            '#autocomplete_route_name' => 'take_a_pet.autocomplete_adopter',
             '#title' => $this->t(string: 'Adopter Name'),
             '#description' => $this->t(string: 'The name must be at least 5 characters long'),
             '#maxlength' => 255,
@@ -41,6 +42,16 @@ class AdoptForm extends FormBase {
             '#weight' => '0',
             '#required' => FALSE
         ];
+
+        // $form['form_adopter']['adopter_name'] = [
+        //     '#type' => 'textfield',
+        //     '#title' => $this->t(string: 'Adopter Name'),
+        //     '#description' => $this->t(string: 'The name must be at least 5 characters long'),
+        //     '#maxlength' => 255,
+        //     '#size' => 255,
+        //     '#weight' => '0',
+        //     '#required' => FALSE
+        // ];
 
         $form['form_adopter']['adopter_phone'] = [
             '#type' => 'number',
@@ -63,6 +74,7 @@ class AdoptForm extends FormBase {
             '#type' => 'select',
             '#title' => $this->t(string: 'Adopted Pet'),
             '#options' => $pets_array,
+            '#empty_option' => 'Choice your favorite Pet',
             '#description' => $this->t(string: 'Adopted pet'),
             '#required' => TRUE,
         ];

@@ -29,10 +29,10 @@ class DrupalDatabaseController extends ControllerBase {
         $connection = Database::getConnection();
         $companies = $connection->select(table: 'company', alias: 'c')
             ->fields(table_alias: 'c')
-            ->condition(field: 'c.name', value: 'JUANK', operator: '=')
+            // ->condition(field: 'c.id', value: 1, operator: '=') // Condicion SELECT
             ->execute();
             foreach ($companies as $company) {
-                dump($company);
+                dpm($company);
             }
         return array('#markup' => "<p>" . $this->t(string: 'Success!') . "</p>");
     }
