@@ -27,6 +27,7 @@ class ListForm extends FormBase {
             ['data' => $this->t(string: 'Tiempo'), 'field' => 'tiempo_laborado'],
             ['data' => $this->t(string: 'Salario'), 'field' => 'salario'],
         ];
+        $rows[] = [];
         $result = $this->getSearchData($header);
         foreach ($result as $register) {
             $departamento = Node::load($register->departamento);

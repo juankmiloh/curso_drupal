@@ -1,0 +1,9 @@
+take_a_break_form_select:
+  version: 3.2.0
+  js:
+    assets/js/form_select.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/once

@@ -8,6 +8,7 @@ use Drupal\Core\Form\FormStateInterface;
  */
 function drupal_project_bits_form_alter(&$form, &$form_Alter, $form_id) {
     if ($form_id == 'register_form') {
+        $form['#attached']['library'][] = 'drupal_project_bits/take_a_break_form_select';
         array_unshift($form['#submit'], 'drupal_project_bits_submit_handler');
     }
 }

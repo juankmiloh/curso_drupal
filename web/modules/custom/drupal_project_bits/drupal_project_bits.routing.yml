@@ -17,3 +17,10 @@ drupal_project_bits.list_form: # NOMBRE DE LA MACHINE ROUTE
     _title: 'Lista tu información' # TITULO QUE APARECERA EN LA PAGINA CREADA
   requirements:
     _access: 'TRUE' # access content se refiere a que cualquier usuario puede ver la vista
+
+drupal_project_bits.change_options:
+  path: '/drupal_project_bits/change_options'
+  defaults:
+    _controller: '\Drupal\drupal_project_bits\Controller\TakeBreakController::change_options'
+  requirements:
+    _permission: 'access content'

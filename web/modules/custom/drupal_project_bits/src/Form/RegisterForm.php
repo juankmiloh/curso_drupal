@@ -87,7 +87,7 @@ class RegisterForm extends FormBase {
         $form['first_form']['ciudad'] = [
             '#type' => 'select',
             '#title' => $this->t(string: 'Ciudad'),
-            '#options' => $cities_array,
+            '#options' => [],
             '#empty_option' => 'Seleccione una ciudad',
             '#description' => $this->t(string: ''),
             '#required' => TRUE,
